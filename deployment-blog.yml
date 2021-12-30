@@ -62,11 +62,31 @@ spec:
                 configMapKeyRef:
                   name: blog-config-map
                   key: BLOG_BANNER_COLOR
+            - name: DATABASE_SERVICE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database
+                  key: database-service-name
+            - name: POSTGRESQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database
+                  key: database-name 
+            - name: POSTGRESQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database
+                  key: database-user
+            - name: POSTGRESQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database
+                  key: database-password
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}
-      schedulerName: default-scheduler      
+      schedulerName: default-scheduler
 ---
 kind: Service
 apiVersion: v1
