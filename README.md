@@ -5,7 +5,7 @@ Depois de logado, criar o projeto dentro do openshift executando o comando:
 oc new-project fiap-aso-grupo14 --display-name 'fiap-aso-grupo14'
 ```
 
-##Criação e configuração do Banco de Dados
+## Criação e configuração do Banco de Dados
 Ao executar o comando, serão criados:
 - Secrets contendo as informações de **user, password, database service name e database name**;
 - Criação do **Service**;
